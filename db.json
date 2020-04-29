@@ -1,0 +1,144 @@
+{
+  "candidatesList": [
+    {
+      "id": "336ad528-a179-4d55-9ae9-ee62ff7b7d1d",
+      "candidateName": "viswanathReddy",
+      "candidatePhoneNo": "990853511",
+      "candidateEmail": "v.viswa000@gmail.com",
+      "interviweremail": "santhosh@gmail.com",
+      "interviewDate": "2020-04-15T18:30:00.000Z",
+      "round": 5,
+      "stream": "back-end",
+      "skillSet": "Java",
+      "location": "BGLR",
+      "position": "Senior Software",
+      "interviewtime": "01:00",
+      "resume": "4Yexp_FrontEnd.pdf"
+    },
+    {
+      "id": "e3af37bf-d891-40c7-a635-517dc1c6da9c",
+      "candidateName": "globalcandidate",
+      "candidatePhoneNo": "8555555565",
+      "candidateEmail": "global@globallogic.com",
+      "interviweremail": "viswanath.vangala!@globalloigc.com",
+      "interviewDate": "2020-04-29T18:30:00.000Z",
+      "round": 3,
+      "stream": "front-end",
+      "skillSet": "Javascript",
+      "location": "GUR",
+      "position": "Senior Software",
+      "interviewtime": "01:01",
+      "resume": "4Yexp_FrontEnd.pdf"
+    },
+    {
+      "id": "fa327a09-db55-4287-912e-b7b946f53211",
+      "candidateName": "new candidate",
+      "candidatePhoneNo": "5455544566",
+      "candidateEmail": "viswanathreddymail@gmail.com",
+      "interviweremail": "viswanathreddy@google.com",
+      "interviewDate": "2020-04-15T18:30:00.000Z",
+      "round": 2,
+      "stream": "back-end",
+      "skillSet": "Javascript",
+      "location": "BGLR",
+      "position": "Senior Software",
+      "interviewtime": "01:00",
+      "resume": ""
+    },
+    {
+      "id": "5523034a-a26c-46df-b7f3-dbfdd11bfdf5",
+      "candidateName": "chiru",
+      "candidatePhoneNo": "8545654565",
+      "candidateEmail": "cnadipalli@google.com",
+      "interviweremail": "adarapu@google.com",
+      "interviewDate": "2020-04-23T18:30:00.000Z",
+      "round": 4,
+      "stream": "front-end",
+      "skillSet": "Javascript",
+      "location": "BGLR",
+      "position": "Senior Software",
+      "interviewtime": "01:00",
+      "resume": ""
+    },
+    {
+      "id": "824947a5-572e-4991-a033-a649695c7f9b",
+      "candidateName": "candidate1",
+      "candidatePhoneNo": "75565445665",
+      "candidateEmail": "vyshnaviy@google.com",
+      "interviweremail": "adarapu@google.com",
+      "interviewDate": "2020-04-23T18:30:00.000Z",
+      "round": 2,
+      "stream": "back-end",
+      "skillSet": "Java",
+      "location": "BGLR",
+      "position": "Senior Software",
+      "interviewtime": "01:00",
+      "resume": ""
+    },
+    {
+      "id": "8640c4fb-94e9-4182-9cd9-2894427dde98",
+      "candidateName": "candidate3",
+      "candidatePhoneNo": "855666235",
+      "candidateEmail": "viswanath.vangala@globallogic.com",
+      "interviweremail": "santhosh.adarapu@globallogic.com",
+      "interviewDate": "2020-04-23T18:30:00.000Z",
+      "round": 3,
+      "stream": "back-end",
+      "skillSet": "Javascript",
+      "location": "BGLR",
+      "position": "Senior Software",
+      "interviewtime": "01:00",
+      "resume": "4Yexp_FrontEnd.pdf"
+    },
+    {
+      "id": "66f6b607-ba76-48ab-ba9a-1abc3aa227da",
+      "candidateName": null,
+      "candidatePhoneNo": null,
+      "candidateEmail": "santhosh.adarapu@globallogic.com",
+      "interviweremail": "viswanath.vangala@globallogic.com",
+      "interviewDate": null,
+      "round": null,
+      "stream": null,
+      "skillSet": null,
+      "location": null,
+      "position": null,
+      "interviewtime": "01:00",
+      "resume": ""
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1,
+      "comment": "some comment regarding interview performance",
+      "intervieweremail": "viswanath.vangala@globallogic.com",
+      "cadidateInterview": "gupta@globallogic.com",
+      "status": "Rejected",
+      "skillsetStatus": {
+        "javascript": "3",
+        "Angualr": "5"
+      }
+    },
+    {
+      "id": 2,
+      "comment": "some comment regarding interview performance",
+      "intervieweremail": "viswanath.vangala@globallogic.com",
+      "cadidateInterview": "gupta@globallogic.com",
+      "status": "Rejected",
+      "skillsetStatus": {
+        "javascript": "3",
+        "Angualr": "5"
+      }
+    },
+    {
+      "id": 3,
+      "comment": "some comment regarding interview performance",
+      "intervieweremail": "viswanath.vangala@globallogic.com",
+      "cadidateInterview": "gupta@globallogic.com",
+      "skillsetStatus": {
+        "javascript": "3",
+        "Angualr": "5"
+      },
+      "status": "Rejected"
+    }
+  ]
+}

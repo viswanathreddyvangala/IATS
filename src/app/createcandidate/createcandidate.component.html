@@ -1,0 +1,102 @@
+<mat-progress-bar *ngIf="isFileLoading"  mode="indeterminate" class="progress-bar"></mat-progress-bar>
+<h2>
+  Create Applicant
+</h2>
+<form [formGroup]="cadidateForm" class="example-form">
+  <mat-form-field class="candidate-info">
+    <mat-label>cadidate name</mat-label>
+    <input matInput placeholder="candidateName" formControlName="candidateName" />
+  </mat-form-field>
+
+  <mat-form-field class="candidate-info">
+    <mat-label>cadidate phone</mat-label>
+    <input matInput formControlName="candidatePhoneNo" placeholder="cadidate phone" />
+  </mat-form-field>
+
+  <mat-form-field class="candidate-info">
+    <mat-label>cadidate email</mat-label>
+    <input matInput formControlName="candidateEmail" placeholder="cadidateEmail" />
+  </mat-form-field>
+
+  <mat-form-field class="interview-info">
+    <mat-label>interviewer email</mat-label>
+    <input matInput formControlName="interviweremail" placeholder="interviwerEmail" />
+  </mat-form-field>
+
+  <mat-form-field class="interview-info max-width-29">
+    <mat-label>interview date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      placeholder="choose a date"
+      formControlName="interviewDate"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="interview-info">
+    <input matInput formControlName='interviewtime' placeholder="time" type="time" id="appt" name="appt"
+           min="09:00" max="18:00" required>
+  </mat-form-field>
+
+
+  <mat-form-field class="interview-info">
+    <mat-label>stream</mat-label>
+    <mat-select matSelect formControlName="stream" placeholder="stream">
+      <mat-option *ngFor="let stream of interviewStuff.streams" [value]="stream">
+        {{stream}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="interview-info">
+    <mat-label>Round</mat-label>
+    <mat-select matSelect formControlName="round" placeholder="round">
+      <mat-option *ngFor="let round of interviewStuff.rounds" [value]="round">
+        {{round}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="interview-info">
+    <mat-label>Skillset</mat-label>
+    <mat-select matSelect formControlName="skillSet" placeholder="tech stack">
+      <mat-option *ngFor="let skillSet of interviewStuff.skillSet" [value]="skillSet">
+        {{skillSet}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="interview-info">
+    <mat-label>Position</mat-label>
+    <mat-select matSelect formControlName="position" placeholder="position">
+      <mat-option *ngFor="let position of interviewStuff.position" [value]="position">
+        {{position}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="interview-info">
+      <mat-label>location</mat-label>
+      <mat-select matSelect formControlName="location" placeholder="choose a location">
+        <mat-option *ngFor="let location of interviewStuff.locations" [value]="location">
+          {{location}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+  <div>
+    <button mat-button color="warn" (click)="onClick()">
+      <mat-icon>file_upload</mat-icon>
+      Choose resume
+    </button>
+    <input type="file" #fileUpload id="fileUpload" name="fileUpload"  placeholder="upload a file" accept="application/pdf/*" style="display:none;" />
+    <span>{{fileName}}</span></div>
+  <button mat-raised- button color="primary" type="submit" class="submitbutton" (click)="addApplicant()">
+    Submit Form
+  </button>
+</form>
+
+

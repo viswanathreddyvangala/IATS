@@ -18,7 +18,7 @@ export class CadidateslistComponent implements OnInit {
   isDataLoading = false;
   displayedColumns = ['name', 'phone', 'cadidateemail', 'intervieweremail', 'dateofinterview' , 'interviewtime', 'resume', 'stream', 'round', 'skillSet', 'location', 'position','actions'];
 
-  constructor(private fetchlist: FetchcadidatesService, public dialog: MatDialog,private snackBar: MatSnackBar) { }
+  constructor(private fetchlist: FetchcadidatesService, public dialog: MatDialog,private snackbar: MatSnackBar) { }
   dataSource = new MatTableDataSource<CandidatesList>();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
@@ -46,7 +46,7 @@ export class CadidateslistComponent implements OnInit {
         this.getcandidateList());
         this.fetchlist.sendMails(data)
           .subscribe(data => {
-            this.snackbar.open(data, 'Undo', {
+            this.snackbar.open("test", 'Undo', {
               duration: 3000
             });
           });

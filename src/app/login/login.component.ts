@@ -2,7 +2,6 @@ import { AuthService } from './../common/services/auth.service';
 import { LoginService } from './login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  hide = true;
   form: FormGroup;
   loginInvalid: boolean;
   isLoading: boolean;
   constructor(
     private fb: FormBuilder,
-    private router: Router,
     private authServ: AuthService,
     private logServ: LoginService
   ) {
@@ -34,8 +33,7 @@ export class LoginComponent implements OnInit {
       this.logServ.login(this.form.value)
        .subscribe(({token}) => {
           this.isLoading = false;
-          this.authServ.setToken(token);
-          this.router.navigate(['']);
+          this.authServ.logIn(token);
         },
         () => {
           this.isLoading = false;

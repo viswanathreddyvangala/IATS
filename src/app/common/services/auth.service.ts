@@ -11,6 +11,10 @@ export class AuthService {
   setToken(token: string) {
     localStorage.setItem(this.loggedUserKey, token);
   }
+  logIn(token){
+    this.setToken(token);
+    this.router.navigate(['']);
+  }
   getToken() {
     return localStorage.getItem(this.loggedUserKey);
   }
@@ -19,6 +23,6 @@ export class AuthService {
   }
   logout() {
     localStorage.removeItem(this.loggedUserKey);
-    this.router.navigate(['Login']);
+    this.router.navigate(['login']);
   }
 }

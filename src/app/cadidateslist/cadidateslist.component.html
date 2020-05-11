@@ -1,81 +1,81 @@
 <mat-progress-bar *ngIf="isDataLoading"  mode="indeterminate"></mat-progress-bar>
-<div class="example-container mat-elevation-z8">
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<div class="example-container">
+<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Name</th>
-    <td mat-cell *matCellDef="let element">{{ element.candidateName }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.candidateName }}</mat-cell>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="phone">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Phone</th>
-    <td mat-cell *matCellDef="let element">{{ element.candidatePhoneNo }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Phone</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.candidatePhoneNo }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="cadidateemail">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Cadidateemail</th>
-    <td mat-cell *matCellDef="let element">{{ element.candidateEmail }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Cadidateemail</mat-header-cell>
+    <mat-cell class="wba" *matCellDef="let element">{{ element.candidateEmail }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="intervieweremail">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Interviewer Email</th>
-    <td mat-cell *matCellDef="let element">{{ element.interviweremail }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Interviewer Email</mat-header-cell>
+    <mat-cell class="wba" *matCellDef="let element">{{ element.interviweremail }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="dateofinterview">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Interview Date</th>
-    <td mat-cell *matCellDef="let element">{{ element.interviewDate | date }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Interview Date</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.interviewDate | date }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="interviewtime">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Time</th>
-    <td mat-cell *matCellDef="let element">{{ element.interviewtime }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Time</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.interviewtime }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="resume">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Resume</th>
-    <td mat-cell *matCellDef="let element">{{ element.resume }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Resume</mat-header-cell>
+    <mat-cell class="wba" *matCellDef="let element">{{ element.resume }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="stream">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Stream</th>
-    <td mat-cell *matCellDef="let element">{{ element.stream }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Stream</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.stream }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="round">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Round</th>
-    <td mat-cell *matCellDef="let element">{{ element.round }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Round</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.round }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="skillSet">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Stack</th>
-    <td mat-cell *matCellDef="let element">{{ element.skillSet }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Stack</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.skillSet }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="location">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Location</th>
-    <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Location</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.location }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>Postition</th>
-    <td mat-cell *matCellDef="let element">
-          {{ element.position }}
-    </td>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Postition</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.position }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef  mat-sort-header>actions</th>
-    <td mat-cell *matCellDef="let element">
-      <div>
+    <mat-header-cell *matHeaderCellDef  mat-sort-header [attr.colspan]="2">Actions</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="icon-cell">
         <mat-icon (click)="editApplicant(element)">edit</mat-icon>
         <mat-icon (click)="deleteApplicant(element.id)">delete</mat-icon>
-      </div>
-    </td>
+    </mat-cell>
   </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
-  <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]"></mat-paginator>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+  <mat-paginator [pageSizeOptions]="[10, 15, 25, 100]" ></mat-paginator>
 </div>
-<button mat-fab color="primary" class="fab-icon" (click)="createApplicant()">+</button>
+  <button mat-fab color="primary" class="fab-icon" (click)="createApplicant()">
+    <mat-icon>add</mat-icon>
+  </button>
+

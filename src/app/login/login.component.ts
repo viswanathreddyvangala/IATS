@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
    onSubmit() {
-     if (this.form.valid) {
+     if (this.form.valid && !this.isLoading) {
       this.isLoading = true;
       this.logServ.login(this.form.value)
        .subscribe(({token}) => {

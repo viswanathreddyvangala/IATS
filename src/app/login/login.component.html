@@ -42,7 +42,9 @@
         <!-- <mat-radio-group aria-label="Select an option">
         <mat-radio-button value="1">Option 1</mat-radio-button>
         <mat-radio-button value="2">Option 2</mat-radio-button>
-      </mat-radio-group> -->
+      </mat-radio-group>
+
+    -->
       </mat-card-content>
       <mat-card-actions>
         <button
@@ -50,9 +52,12 @@
           type="submit"
           class="login-btn"
           color="primary"
+          [style.opacity] = "!isLoading ? 1 : 0.5"
         >
           Login
+
         </button>
+        <mat-spinner *ngIf="isLoading"  color="accent" class="spinner" [diameter]="20"></mat-spinner>
       </mat-card-actions>
     </form>
   </mat-card>

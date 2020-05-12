@@ -10,7 +10,9 @@
   // padding: 1em;
 }
 
-
+mat-header-row mat-header-cell{
+  padding-left: 5px;
+}
 mat-row {
   height: auto;
   mat-cell {

@@ -14,7 +14,7 @@ export class LoginService {
 
   login(payload: Login): Observable<any> {
     // FIXME: Just api test
-    const data =  { userName: payload.email
+    const data =  { userName: payload.username
       , password: payload.password,
       userType: 'admin'};
 

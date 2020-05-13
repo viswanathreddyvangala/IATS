@@ -3,6 +3,7 @@ import {Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {CandidatesList} from '.././model/cadidate-list.model';
 import { delay } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,8 @@ export class FetchcadidatesService {
   }
 
   postCadidatesList(data: CandidatesList) {
-    return of(this.http.post<Array<CandidatesList>>(this.serverURL + '/candidatesList', data)
-      .subscribe(data => {
-        return data;
-        }));
+    // FIXME: Just for api test
+    return this.http.post<Array<CandidatesList>>(`${environment.apiUrl}/createUser`, data);
   }
 
   sendMails(data:CandidatesList){

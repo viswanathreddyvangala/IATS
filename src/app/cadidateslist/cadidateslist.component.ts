@@ -16,9 +16,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class CadidateslistComponent implements OnInit {
 
   isDataLoading = false;
-  displayedColumns = ['name', 'phone', 'cadidateemail', 'intervieweremail', 'dateofinterview' , 'interviewtime', 'resume', 'stream', 'round', 'skillSet', 'location', 'position','actions'];
+  displayedColumns = ['name', 'phone', 'cadidateemail', 'intervieweremail', 'dateofinterview' , 'interviewtime', 'resume', 'stream', 'round', 'skillSet', 'location', 'position', 'actions'];
 
-  constructor(private fetchlist: FetchcadidatesService, public dialog: MatDialog,private snackbar: MatSnackBar) { }
+  constructor(private fetchlist: FetchcadidatesService, public dialog: MatDialog, private snackbar: MatSnackBar) { }
   dataSource = new MatTableDataSource<CandidatesList>();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
@@ -42,11 +42,12 @@ export class CadidateslistComponent implements OnInit {
     dialogRef.afterClosed().subscribe(data => {
       if (data){
       this.isDataLoading = true;
-      this.fetchlist.postCadidatesList(data).subscribe(data =>
-        this.getcandidateList());
-        this.fetchlist.sendMails(data)
-          .subscribe(data => {
-            this.snackbar.open("test", 'Undo', {
+      this.fetchlist.postCadidatesList(data)
+      .subscribe(() => this.getcandidateList());
+      // TODO: Need Fork Join if it required
+      this.fetchlist.sendMails(data)
+          .subscribe(() => {
+            this.snackbar.open('test', 'Undo', {
               duration: 3000
             });
           });
@@ -56,9 +57,9 @@ export class CadidateslistComponent implements OnInit {
   }
 
   editApplicant(data: any){
-    const dialogRef = this.dialog.open(CreatecandidateComponent, {data})
+    const dialogRef = this.dialog.open(CreatecandidateComponent, {data});
     dialogRef.afterClosed().subscribe(data => {
-      if(data) {
+      if (data) {
         this.isDataLoading = true;
         this.fetchlist.updateCadidatesList(data).subscribe(data => this.getcandidateList());
       }

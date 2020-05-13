@@ -12,7 +12,7 @@ import { FetchcadidatesService } from './cadidateslist/fetchcadidates.service';
 import { CreatecandidateComponent } from './createcandidate/createcandidate.component';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
@@ -27,6 +27,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ApiInterceptor } from './common/interceptor/api.interceptor';
 
 
 
@@ -68,8 +69,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatRippleModule,
     MatDatepickerModule,
   ],
-  providers: [FetchcadidatesService],
-  entryComponents: [ CreatecandidateComponent],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+  ],
+  entryComponents: [CreatecandidateComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

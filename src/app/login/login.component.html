@@ -52,7 +52,7 @@
           type="submit"
           class="login-btn"
           color="primary"
-          [style.opacity] = "!isLoading ? 1 : 0.5"
+          [class.overlay] = "isLoading"
         >
           Login
 
